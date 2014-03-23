@@ -12,11 +12,15 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
 
+#import "REGooglePlaceSearch.h"
+
 @interface REGooglePlacesClient : AFHTTPSessionManager
 
 + (REGooglePlacesClient *)sharedGooglePlacesClient;
 
 @property (nonatomic, weak) id<REGooglePlacesClientDelegate>delegate;
+
+- (void)REGooglePlaceSearchRequest:(REGooglePlaceSearch *)search;
 
 - (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm;
 - (void)REGooglePlaceTextSearchByTerm:(NSString *)searchTerm;

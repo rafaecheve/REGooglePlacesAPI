@@ -43,8 +43,38 @@ static NSString * const REGooglePlaceAPIKey     = @"AIzaSyBnZA7KGHAKm9J39HEl-mVk
     return self;
 }
 
-//https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&sensor=false&key=AddYourOwnKeyHere
-
+- (void)REGooglePlaceSearchRequest:(REGooglePlaceSearch *)search {
+    
+    NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:search];
+    
+    NSString * urlRequest = [NSString stringWithFormat:@"%@/%@/json?key=%@",REGooglePlaceAPIBaseURL,
+                                                                            search.placeSearchRequestType,
+                                                                            REGooglePlaceAPIKey];
+    [self GET:urlRequest parameters:d
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+          
+          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundNearByPlaces:)]) {
+              
+              NSArray *results = [responseObject objectForKey:@"results"];
+              
+              NSValueTransformer *transformer;
+              
+              transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
+              
+              NSArray *places = [transformer transformedValue:results];
+              
+              [self.delegate REGooglePlacesClient:self
+                             didFoundNearByPlaces: places];
+          }
+          
+      } failure:^(NSURLSessionDataTask *task, NSError *error) {
+          
+          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
+              [self.delegate REGooglePlacesClient:self
+                                 didFailWithError:error];
+          }
+      }];
+}
 
 - (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm {
     

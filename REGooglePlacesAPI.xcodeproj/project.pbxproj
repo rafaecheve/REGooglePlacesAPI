@@ -23,6 +23,7 @@
 		53DF2F0218DE556400F8879B /* REGooglePlacesAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF2F0118DE556400F8879B /* REGooglePlacesAPITests.m */; };
 		53DF2F0D18DE605100F8879B /* REGooglePlacesClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF2F0C18DE605100F8879B /* REGooglePlacesClient.m */; };
 		53DF2F1018DE6C7200F8879B /* REGooglePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF2F0F18DE6C7200F8879B /* REGooglePlace.m */; };
+		53DF2F1318DF4DC900F8879B /* REGooglePlaceSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF2F1218DF4DC900F8879B /* REGooglePlaceSearch.m */; };
 		A96ADE40D2AE4636AACAEAC9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0B6FAE527C4E52831A54F7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		53DF2F0C18DE605100F8879B /* REGooglePlacesClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REGooglePlacesClient.m; sourceTree = "<group>"; };
 		53DF2F0E18DE6C7200F8879B /* REGooglePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REGooglePlace.h; sourceTree = "<group>"; };
 		53DF2F0F18DE6C7200F8879B /* REGooglePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REGooglePlace.m; sourceTree = "<group>"; };
+		53DF2F1118DF4DC900F8879B /* REGooglePlaceSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REGooglePlaceSearch.h; path = ../REGooglePlaceSearch.h; sourceTree = "<group>"; };
+		53DF2F1218DF4DC900F8879B /* REGooglePlaceSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REGooglePlaceSearch.m; path = ../REGooglePlaceSearch.m; sourceTree = "<group>"; };
 		7F0B6FAE527C4E52831A54F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DE4B1AF3AF4639B6538EF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +127,8 @@
 		53DF2EDC18DE556300F8879B /* REGooglePlacesAPI */ = {
 			isa = PBXGroup;
 			children = (
+				53DF2F1118DF4DC900F8879B /* REGooglePlaceSearch.h */,
+				53DF2F1218DF4DC900F8879B /* REGooglePlaceSearch.m */,
 				53DF2F0E18DE6C7200F8879B /* REGooglePlace.h */,
 				53DF2F0F18DE6C7200F8879B /* REGooglePlace.m */,
 				53DF2F0B18DE605100F8879B /* REGooglePlacesClient.h */,
@@ -304,6 +309,7 @@
 				53DF2F0D18DE605100F8879B /* REGooglePlacesClient.m in Sources */,
 				53DF2EE318DE556300F8879B /* main.m in Sources */,
 				53DF2F1018DE6C7200F8879B /* REGooglePlace.m in Sources */,
+				53DF2F1318DF4DC900F8879B /* REGooglePlaceSearch.m in Sources */,
 				53DF2EE718DE556300F8879B /* REAppDelegate.m in Sources */,
 				53DF2EED18DE556300F8879B /* REViewController.m in Sources */,
 			);

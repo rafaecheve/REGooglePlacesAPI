@@ -12,9 +12,15 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
+             @"placeFormatedAddress": @"formatted_address",
+             @"placeGeometry": @"geometry",
+             @"placeIcon": @"icon",
              @"placeId": @"id",
              @"placeName": @"name",
-
+             @"placeRating": @"rating",
+             @"placeReference": @"reference",
+             @"placeTypes": @"types",
+             @"placeVicinity": @"vicinity"
              };
 }
 

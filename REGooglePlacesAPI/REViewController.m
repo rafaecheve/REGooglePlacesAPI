@@ -7,21 +7,44 @@
 //
 
 #import "REViewController.h"
+#import "REGooglePlaceSearch.h"
 #import <AFNetworking/AFNetworking.h>
 
 @implementation REViewController
 
 - (void)viewDidLoad {
     
+    REGooglePlaceSearch *query = [[REGooglePlaceSearch alloc]init];
+    
+    query.placeSearchRequestType = REGooglePlaceNearBySearch;
+    
+    query.placeSearchName = @"Lupita";
+    
+    query.placeSearchLocation =  @"17.989167,-92.928056";
+    
+    query.placeSearchSensor = @"false";
+    
+    query.placeSearchRadius = @"500";
+    
+    NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:query];
+    
+    NSLog(@"%@",d);
+    
     REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
     
     client.delegate = self;
     
-    [client REGooglePlaceNearBySearchByTerm:@"restaurant"];
-    
-    [client REGooglePlaceTextSearchByTerm:@"restaurants in Mexico"];
+    [client REGooglePlaceSearchRequest:query];
 
-    [client REGooglePlaceRadarSearchByTerm:@"restaurants in Mexico"];
+//    REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
+//    
+//    client.delegate = self;
+//    
+//    [client REGooglePlaceNearBySearchByTerm:@"restaurant"];
+//    
+//    [client REGooglePlaceTextSearchByTerm:@"restaurants in Mexico"];
+//
+//    [client REGooglePlaceRadarSearchByTerm:@"restaurants in Mexico"];
 
     [super viewDidLoad];
 }
@@ -29,7 +52,6 @@
 - (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places {
     NSLog(@"%@",places);
 }
-
 
 -(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundTextSearchPlaces:(NSArray *)places {
     NSLog(@"%@",places);
