@@ -1,5 +1,8 @@
 # Xcode
+<<<<<<< HEAD
 .xcuserstate
+=======
+>>>>>>> 9d017d393a785b71bac9e6bd02a8a60ebdf706e9
 .DS_Store
 */build/*
 *.pbxuser
