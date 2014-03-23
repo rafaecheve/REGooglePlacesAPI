@@ -1,0 +1,57 @@
+//
+//  REViewController.m
+//  REGooglePlacesAPI
+//
+//  Created by Rafael Echeverria on 3/22/14.
+//  Copyright (c) 2014 rafaecheve. All rights reserved.
+//
+
+#import "REViewController.h"
+#import <AFNetworking/AFNetworking.h>
+
+@implementation REViewController
+
+- (void)viewDidLoad {
+    
+    REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
+    
+    client.delegate = self;
+    
+    [client REGooglePlaceNearBySearchByTerm:@"restaurant"];
+    
+    [client REGooglePlaceTextSearchByTerm:@"restaurants in Mexico"];
+
+    [client REGooglePlaceRadarSearchByTerm:@"restaurants in Mexico"];
+
+    [super viewDidLoad];
+}
+
+- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places {
+    NSLog(@"%@",places);
+}
+
+
+-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundTextSearchPlaces:(NSArray *)places {
+    NSLog(@"%@",places);
+}
+
+-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundRadarSearchPlaces:(NSArray *)places {
+    NSLog(@"%@",places);
+}
+
+- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithError:(NSError *)error {
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Places"
+                                                        message:[NSString stringWithFormat:@"%@",error]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
