@@ -25,10 +25,14 @@
     query.placeSearchSensor = @"false";
     
     query.placeSearchRadius = @"500";
+
     
-    NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:query];
     
-    NSLog(@"%@",d);
+
+//
+//    NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:query];
+//    
+//    NSLog(@"%@",d);
     
     REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
     
@@ -50,6 +54,7 @@
 }
 
 - (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places {
+    
     NSLog(@"%@",places);
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5333E93018DF7AC000F9BCD0 /* RESearchNearByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */; };
+		5333E93418DF7C9200F9BCD0 /* RETextSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */; };
+		5333E93718DF7CA300F9BCD0 /* RERadarSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93618DF7CA300F9BCD0 /* RERadarSearchViewController.m */; };
 		53DF2ED718DE556300F8879B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF2ED618DE556300F8879B /* Foundation.framework */; };
 		53DF2ED918DE556300F8879B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF2ED818DE556300F8879B /* CoreGraphics.framework */; };
 		53DF2EDB18DE556300F8879B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF2EDA18DE556300F8879B /* UIKit.framework */; };
@@ -38,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5333E92E18DF7AC000F9BCD0 /* RESearchNearByViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESearchNearByViewController.h; sourceTree = "<group>"; };
+		5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESearchNearByViewController.m; sourceTree = "<group>"; };
+		5333E93218DF7C9200F9BCD0 /* RETextSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETextSearchViewController.h; sourceTree = "<group>"; };
+		5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETextSearchViewController.m; sourceTree = "<group>"; };
+		5333E93518DF7CA300F9BCD0 /* RERadarSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERadarSearchViewController.h; sourceTree = "<group>"; };
+		5333E93618DF7CA300F9BCD0 /* RERadarSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RERadarSearchViewController.m; sourceTree = "<group>"; };
 		53DF2ED318DE556300F8879B /* REGooglePlacesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REGooglePlacesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF2ED618DE556300F8879B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53DF2ED818DE556300F8879B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,8 +55,8 @@
 		53DF2EE018DE556300F8879B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53DF2EE218DE556300F8879B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		53DF2EE418DE556300F8879B /* REGooglePlacesAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "REGooglePlacesAPI-Prefix.pch"; sourceTree = "<group>"; };
-		53DF2EE518DE556300F8879B /* REAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REAppDelegate.h; sourceTree = "<group>"; };
-		53DF2EE618DE556300F8879B /* REAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REAppDelegate.m; sourceTree = "<group>"; };
+		53DF2EE518DE556300F8879B /* REAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = REAppDelegate.h; path = REGooglePlacesAPI/REAppDelegate.h; sourceTree = "<group>"; };
+		53DF2EE618DE556300F8879B /* REAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = REAppDelegate.m; path = REGooglePlacesAPI/REAppDelegate.m; sourceTree = "<group>"; };
 		53DF2EE918DE556300F8879B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53DF2EEB18DE556300F8879B /* REViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REViewController.h; sourceTree = "<group>"; };
 		53DF2EEC18DE556300F8879B /* REViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REViewController.m; sourceTree = "<group>"; };
@@ -92,9 +101,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5333E93118DF7AC900F9BCD0 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				53DF2EE818DE556300F8879B /* Main.storyboard */,
+				53DF2EEB18DE556300F8879B /* REViewController.h */,
+				53DF2EEC18DE556300F8879B /* REViewController.m */,
+				5333E92E18DF7AC000F9BCD0 /* RESearchNearByViewController.h */,
+				5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */,
+				5333E93218DF7C9200F9BCD0 /* RETextSearchViewController.h */,
+				5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */,
+				5333E93518DF7CA300F9BCD0 /* RERadarSearchViewController.h */,
+				5333E93618DF7CA300F9BCD0 /* RERadarSearchViewController.m */,
+			);
+			name = Demo;
+			path = REGooglePlacesAPI;
+			sourceTree = "<group>";
+		};
 		53DF2ECA18DE556300F8879B = {
 			isa = PBXGroup;
 			children = (
+				53DF2EE518DE556300F8879B /* REAppDelegate.h */,
+				53DF2EE618DE556300F8879B /* REAppDelegate.m */,
+				5333E93118DF7AC900F9BCD0 /* Demo */,
 				53DF2EDC18DE556300F8879B /* REGooglePlacesAPI */,
 				53DF2EFB18DE556400F8879B /* REGooglePlacesAPITests */,
 				53DF2ED518DE556300F8879B /* Frameworks */,
@@ -127,17 +156,12 @@
 		53DF2EDC18DE556300F8879B /* REGooglePlacesAPI */ = {
 			isa = PBXGroup;
 			children = (
+				53DF2F0B18DE605100F8879B /* REGooglePlacesClient.h */,
+				53DF2F0C18DE605100F8879B /* REGooglePlacesClient.m */,
 				53DF2F1118DF4DC900F8879B /* REGooglePlaceSearch.h */,
 				53DF2F1218DF4DC900F8879B /* REGooglePlaceSearch.m */,
 				53DF2F0E18DE6C7200F8879B /* REGooglePlace.h */,
 				53DF2F0F18DE6C7200F8879B /* REGooglePlace.m */,
-				53DF2F0B18DE605100F8879B /* REGooglePlacesClient.h */,
-				53DF2F0C18DE605100F8879B /* REGooglePlacesClient.m */,
-				53DF2EE518DE556300F8879B /* REAppDelegate.h */,
-				53DF2EE618DE556300F8879B /* REAppDelegate.m */,
-				53DF2EE818DE556300F8879B /* Main.storyboard */,
-				53DF2EEB18DE556300F8879B /* REViewController.h */,
-				53DF2EEC18DE556300F8879B /* REViewController.m */,
 				53DF2EEE18DE556400F8879B /* Images.xcassets */,
 				53DF2EDD18DE556300F8879B /* Supporting Files */,
 			);
@@ -306,9 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5333E93718DF7CA300F9BCD0 /* RERadarSearchViewController.m in Sources */,
+				5333E93418DF7C9200F9BCD0 /* RETextSearchViewController.m in Sources */,
 				53DF2F0D18DE605100F8879B /* REGooglePlacesClient.m in Sources */,
 				53DF2EE318DE556300F8879B /* main.m in Sources */,
 				53DF2F1018DE6C7200F8879B /* REGooglePlace.m in Sources */,
+				5333E93018DF7AC000F9BCD0 /* RESearchNearByViewController.m in Sources */,
 				53DF2F1318DF4DC900F8879B /* REGooglePlaceSearch.m in Sources */,
 				53DF2EE718DE556300F8879B /* REAppDelegate.m in Sources */,
 				53DF2EED18DE556300F8879B /* REViewController.m in Sources */,

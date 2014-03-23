@@ -32,7 +32,7 @@ NSString * const REGooglePlaceRadarSearch = @"radarsearch";
              @"placeSearchTypes": @"types",
              @"placeSearchPageToken": @"pagetoken",
              @"placeSearchZagatSelected": @"zagatselected",
-             @"placeSearchRequestType": NSNull.null,
+             @"placeSearchRequestType": NSNull.null
              };
 }
 

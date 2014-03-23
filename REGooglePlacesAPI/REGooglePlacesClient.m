@@ -61,6 +61,8 @@ static NSString * const REGooglePlaceAPIKey     = @"AIzaSyBnZA7KGHAKm9J39HEl-mVk
               
               transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
               
+              
+              
               NSArray *places = [transformer transformedValue:results];
               
               [self.delegate REGooglePlacesClient:self
