@@ -13,8 +13,7 @@ static NSString * const REGooglePlaceAPIBaseURL = @"https://maps.googleapis.com/
 
 #error "Create an API with Google Developer Console"
 
-static NSString * const REGooglePlaceAPIKey     = @"yourgoogleAPIKeyHere";
-
+static NSString * const REGooglePlaceAPIKey     = @"";
 
 @implementation REGooglePlacesClient
 
@@ -33,7 +32,6 @@ static NSString * const REGooglePlaceAPIKey     = @"yourgoogleAPIKeyHere";
     return _sharedGooglePlacesClient;
 }
 
-
 - (instancetype)initWithBaseURL:(NSURL *)url {
     
     self = [super initWithBaseURL:url];
@@ -50,26 +48,33 @@ static NSString * const REGooglePlaceAPIKey     = @"yourgoogleAPIKeyHere";
     
     NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:search];
     
-    NSString * urlRequest = [NSString stringWithFormat:@"%@/%@/json?key=%@",REGooglePlaceAPIBaseURL,
-                                                                            search.placeSearchRequestType,
+    NSString * urlRequest = [NSString stringWithFormat:@"%@/%@/%@?key=%@",REGooglePlaceAPIBaseURL,                                                                                                                          search.placeSearchRequestType,search.placeSearchOutput,
+
                                                                             REGooglePlaceAPIKey];
     [self GET:urlRequest parameters:d
       success:^(NSURLSessionDataTask *task, id responseObject) {
           
           if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundNearByPlaces:)]) {
               
-              NSArray *results = [responseObject objectForKey:@"results"];
               
-              NSValueTransformer *transformer;
-              
-              transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
-              
-              
-              
-              NSArray *places = [transformer transformedValue:results];
-              
-              [self.delegate REGooglePlacesClient:self
-                             didFoundNearByPlaces: places];
+              if (![[responseObject objectForKey:@"status"] isEqualToString:@"OK"]) {
+                  
+                  [self.delegate REGooglePlacesClient:self
+                                     didFailWithMessage:[responseObject objectForKey:@"error_message"]];
+                  
+              }else{
+        
+                  NSArray *results = [responseObject objectForKey:@"results"];
+                  
+                  NSValueTransformer *transformer;
+                  
+                  transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
+                  
+                NSArray *places = [transformer transformedValue:results];
+                  
+                  [self.delegate REGooglePlacesClient:self
+                                 didFoundNearByPlaces: places];
+              }
           }
           
       } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -115,6 +120,7 @@ static NSString * const REGooglePlaceAPIKey     = @"yourgoogleAPIKeyHere";
         }
     
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
         
         if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
             [self.delegate REGooglePlacesClient:self

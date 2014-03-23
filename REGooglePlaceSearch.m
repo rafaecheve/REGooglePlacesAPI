@@ -16,7 +16,7 @@ NSString * const REGooglePlaceRadarSearch = @"radarsearch";
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"placeSearchOutput": @"output",
+             @"placeSearchOutput": NSNull.null,
              @"placeSearchLocation": @"location",
              @"placeSearchRadius": @"radius",
              @"placeSearchSensor": @"sensor",

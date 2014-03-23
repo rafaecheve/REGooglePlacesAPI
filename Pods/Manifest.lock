@@ -29,6 +29,9 @@ PODS:
     - Mantle/extobjc
   - Mantle/extobjc (1.4.1)
   - ObjectiveSugar (1.1.0)
+  - SDWebImage (3.5.4):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.4)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
@@ -36,6 +39,7 @@ DEPENDENCIES:
   - CocoaLumberjack
   - Mantle
   - ObjectiveSugar
+  - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: c2e99aec5d965a3ee33f0954a20c5ddab18934fe
@@ -43,5 +47,6 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 020378ec400d658923bf5887178394f65f052c90
   Mantle: 0714cdb2b8559d9e6c2410d6a8529e3307bff189
   ObjectiveSugar: fed588577bcf9733546aeaa089de444e4bab9a52
+  SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
 
 COCOAPODS: 0.29.0

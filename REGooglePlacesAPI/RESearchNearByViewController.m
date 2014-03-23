@@ -11,6 +11,8 @@
 #import "REGooglePlace.h"
 #import "REPlaceTableViewCell.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface RESearchNearByViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *placesTableView;
@@ -58,6 +60,9 @@
      cell.lblPlaceName.text = place.placeName;
      cell.lblPlaceVicinity.text = place.placeVicinity;
      
+     [cell.imgPlaceIcon setImageWithURL:[NSURL URLWithString:place.placeIcon]
+                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+     
  return cell;
      
 }
@@ -76,6 +81,8 @@
     REGooglePlaceSearch *query = [[REGooglePlaceSearch alloc]init];
     
     query.placeSearchRequestType = REGooglePlaceNearBySearch;
+    
+    query.placeSearchOutput = @"json";
     
     query.placeSearchName = @"Lupita";
     
@@ -105,14 +112,23 @@
 
 }
 
-- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithError:(NSError *)error {
+- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithMessage:(NSString *)message{
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Places"
-                                                        message:[NSString stringWithFormat:@"%@",error]
+                                                        message:[NSString stringWithFormat:@"%@",message]
                                                        delegate:nil
                                               cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 }
+
+//- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithError:(NSError *)error {
+//    
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Places"
+//                                                        message:[NSString stringWithFormat:@"%@",error]
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [alertView show];
+//}
 
 - (void)didReceiveMemoryWarning {
     

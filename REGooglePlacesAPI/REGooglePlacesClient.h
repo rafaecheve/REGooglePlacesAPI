@@ -37,5 +37,6 @@
 -(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundRadarSearchPlaces:(NSArray *)places;
 
 -(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithError:(NSError *)error;
+-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithMessage:(NSString *)message;
 
 @end
