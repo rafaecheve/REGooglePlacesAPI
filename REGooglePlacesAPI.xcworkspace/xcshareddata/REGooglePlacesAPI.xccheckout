@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>336CE85B-24EA-4B96-94D2-2C0E438A114E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>REGooglePlacesAPI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5614CCEB-9191-4128-B112-F837C340F21F</key>
+		<string>https://github.com/rafaecheve/REGooglePlacesAPI.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>REGooglePlacesAPI.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5614CCEB-9191-4128-B112-F837C340F21F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rafaecheve/REGooglePlacesAPI.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5614CCEB-9191-4128-B112-F837C340F21F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5614CCEB-9191-4128-B112-F837C340F21F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>REGooglePlacesAPI</string>
+		</dict>
+	</array>
+</dict>
+</plist>
