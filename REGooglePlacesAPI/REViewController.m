@@ -14,19 +14,7 @@
 
 - (void)viewDidLoad {
     
-    REGooglePlaceSearch *query = [[REGooglePlaceSearch alloc]init];
-    
-    query.placeSearchRequestType = REGooglePlaceNearBySearch;
-    
-    query.placeSearchName = @"Lupita";
-    
-    query.placeSearchLocation =  @"17.989167,-92.928056";
-    
-    query.placeSearchSensor = @"false";
-    
-    query.placeSearchRadius = @"500";
 
-    
     
 
 //
@@ -34,11 +22,7 @@
 //    
 //    NSLog(@"%@",d);
     
-    REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
-    
-    client.delegate = self;
-    
-    [client REGooglePlaceSearchRequest:query];
+
 
 //    REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
 //    

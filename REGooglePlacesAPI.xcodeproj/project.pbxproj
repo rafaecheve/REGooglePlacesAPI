@@ -10,6 +10,8 @@
 		5333E93018DF7AC000F9BCD0 /* RESearchNearByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */; };
 		5333E93418DF7C9200F9BCD0 /* RETextSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */; };
 		5333E93718DF7CA300F9BCD0 /* RERadarSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93618DF7CA300F9BCD0 /* RERadarSearchViewController.m */; };
+		5333E93A18DF7FB300F9BCD0 /* RETableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93918DF7FB300F9BCD0 /* RETableTableViewController.m */; };
+		5333E93D18DF83CD00F9BCD0 /* REPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93C18DF83CD00F9BCD0 /* REPlaceTableViewCell.m */; };
 		53DF2ED718DE556300F8879B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF2ED618DE556300F8879B /* Foundation.framework */; };
 		53DF2ED918DE556300F8879B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF2ED818DE556300F8879B /* CoreGraphics.framework */; };
 		53DF2EDB18DE556300F8879B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF2EDA18DE556300F8879B /* UIKit.framework */; };
@@ -47,6 +49,10 @@
 		5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETextSearchViewController.m; sourceTree = "<group>"; };
 		5333E93518DF7CA300F9BCD0 /* RERadarSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERadarSearchViewController.h; sourceTree = "<group>"; };
 		5333E93618DF7CA300F9BCD0 /* RERadarSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RERadarSearchViewController.m; sourceTree = "<group>"; };
+		5333E93818DF7FB300F9BCD0 /* RETableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableTableViewController.h; sourceTree = "<group>"; };
+		5333E93918DF7FB300F9BCD0 /* RETableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableTableViewController.m; sourceTree = "<group>"; };
+		5333E93B18DF83CD00F9BCD0 /* REPlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPlaceTableViewCell.h; sourceTree = "<group>"; };
+		5333E93C18DF83CD00F9BCD0 /* REPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPlaceTableViewCell.m; sourceTree = "<group>"; };
 		53DF2ED318DE556300F8879B /* REGooglePlacesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REGooglePlacesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF2ED618DE556300F8879B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53DF2ED818DE556300F8879B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,10 +111,14 @@
 			isa = PBXGroup;
 			children = (
 				53DF2EE818DE556300F8879B /* Main.storyboard */,
+				5333E93B18DF83CD00F9BCD0 /* REPlaceTableViewCell.h */,
+				5333E93C18DF83CD00F9BCD0 /* REPlaceTableViewCell.m */,
 				53DF2EEB18DE556300F8879B /* REViewController.h */,
 				53DF2EEC18DE556300F8879B /* REViewController.m */,
 				5333E92E18DF7AC000F9BCD0 /* RESearchNearByViewController.h */,
 				5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */,
+				5333E93818DF7FB300F9BCD0 /* RETableTableViewController.h */,
+				5333E93918DF7FB300F9BCD0 /* RETableTableViewController.m */,
 				5333E93218DF7C9200F9BCD0 /* RETextSearchViewController.h */,
 				5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */,
 				5333E93518DF7CA300F9BCD0 /* RERadarSearchViewController.h */,
@@ -339,6 +349,8 @@
 				53DF2F1318DF4DC900F8879B /* REGooglePlaceSearch.m in Sources */,
 				53DF2EE718DE556300F8879B /* REAppDelegate.m in Sources */,
 				53DF2EED18DE556300F8879B /* REViewController.m in Sources */,
+				5333E93D18DF83CD00F9BCD0 /* REPlaceTableViewCell.m in Sources */,
+				5333E93A18DF7FB300F9BCD0 /* RETableTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
