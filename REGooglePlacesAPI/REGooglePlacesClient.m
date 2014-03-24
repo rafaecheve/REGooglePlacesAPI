@@ -11,9 +11,8 @@
 
 static NSString * const REGooglePlaceAPIBaseURL = @"https://maps.googleapis.com/maps/api/place";
 
-#error "Create an API with Google Developer Console"
-
-static NSString * const REGooglePlaceAPIKey     = @"";
+//#error "Create an API with Google Developer Console"
+static NSString * const REGooglePlaceAPIKey     = @"AIzaSyBnZA7KGHAKm9J39HEl-mVk3i0DjByK6QM";
 
 @implementation REGooglePlacesClient
 
@@ -48,14 +47,14 @@ static NSString * const REGooglePlaceAPIKey     = @"";
     
     NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:search];
     
-    NSString * urlRequest = [NSString stringWithFormat:@"%@/%@/%@?key=%@",REGooglePlaceAPIBaseURL,                                                                                                                          search.placeSearchRequestType,search.placeSearchOutput,
-
-                                                                            REGooglePlaceAPIKey];
+    NSString * urlRequest = [NSString stringWithFormat:@"%@/%@/%@?key=%@",REGooglePlaceAPIBaseURL,
+                                                                          search.placeSearchRequestType,
+                                                                          search.placeSearchOutput,
+                                                                          REGooglePlaceAPIKey];
     [self GET:urlRequest parameters:d
       success:^(NSURLSessionDataTask *task, id responseObject) {
           
-          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundNearByPlaces:)]) {
-              
+          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundPlaces:)]) {
               
               if (![[responseObject objectForKey:@"status"] isEqualToString:@"OK"]) {
                   
@@ -73,7 +72,7 @@ static NSString * const REGooglePlaceAPIKey     = @"";
                 NSArray *places = [transformer transformedValue:results];
                   
                   [self.delegate REGooglePlacesClient:self
-                                 didFoundNearByPlaces: places];
+                                 didFoundPlaces: places];
               }
           }
           
@@ -86,127 +85,127 @@ static NSString * const REGooglePlaceAPIKey     = @"";
       }];
 }
 
-- (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm {
-    
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
-    parameters[@"location"] = @"17.989167,-92.928056";
-   
-    parameters[@"radius"] = @(500);
-    
-    parameters[@"types"] = @"food";
-    
-    parameters[@"name"] = searchTerm;
-    
-    parameters[@"sensor"] = @"false";
-    
-    parameters[@"key"] = REGooglePlaceAPIKey;
+//- (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm {
+//    
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//    
+//    parameters[@"location"] = @"17.989167,-92.928056";
+//   
+//    parameters[@"radius"] = @(500);
+//    
+//    parameters[@"types"] = @"food";
+//    
+//    parameters[@"name"] = searchTerm;
+//    
+//    parameters[@"sensor"] = @"false";
+//    
+//    parameters[@"key"] = REGooglePlaceAPIKey;
+//
+//    [self GET:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?" parameters:parameters
+//                                                                                  success:^(NSURLSessionDataTask *task, id responseObject) {
+//        
+//        if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundNearByPlaces:)]) {
+//            
+//            NSArray *results = [responseObject objectForKey:@"results"];
+//            
+//            NSValueTransformer *transformer;
+//            
+//            transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
+//            
+//            NSArray *places = [transformer transformedValue:results];
+//            
+//            [self.delegate REGooglePlacesClient:self
+//                                 didFoundNearByPlaces: places];
+//        }
+//    
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        
+//        
+//        if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
+//            [self.delegate REGooglePlacesClient:self
+//                               didFailWithError:error];
+//        }
+//    }];
+//}
 
-    [self GET:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?" parameters:parameters
-                                                                                  success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundNearByPlaces:)]) {
-            
-            NSArray *results = [responseObject objectForKey:@"results"];
-            
-            NSValueTransformer *transformer;
-            
-            transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
-            
-            NSArray *places = [transformer transformedValue:results];
-            
-            [self.delegate REGooglePlacesClient:self
-                                 didFoundNearByPlaces: places];
-        }
-    
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-        
-        if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
-            [self.delegate REGooglePlacesClient:self
-                               didFailWithError:error];
-        }
-    }];
-}
-
-- (void)REGooglePlaceTextSearchByTerm:(NSString *)searchTerm {
-    
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
-    parameters[@"query"] = searchTerm;
-    
-    parameters[@"sensor"] = @"false";
-    
-    parameters[@"key"] = REGooglePlaceAPIKey;
-    
-    [self GET:@"https://maps.googleapis.com/maps/api/place/textsearch/json?" parameters:parameters
-      success:^(NSURLSessionDataTask *task, id responseObject) {
-          
-          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundTextSearchPlaces:)]) {
-              
-              NSArray *results = [responseObject objectForKey:@"results"];
-              
-              NSValueTransformer *transformer;
-              
-              transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
-              
-              NSArray *places = [transformer transformedValue:results];
-              
-              [self.delegate REGooglePlacesClient:self
-                             didFoundTextSearchPlaces: places];
-          }
-          
-      } failure:^(NSURLSessionDataTask *task, NSError *error) {
-          
-          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
-              [self.delegate REGooglePlacesClient:self
-                                 didFailWithError:error];
-          }
-      }];
-}
-
-- (void)REGooglePlaceRadarSearchByTerm:(NSString *)searchTerm {
-    
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
-    parameters[@"location"] = @"17.989167,-92.928056";
-    
-    parameters[@"radius"] = @(5000);
-    
-    parameters[@"types"] = @"food";
-
+//- (void)REGooglePlaceTextSearchByTerm:(NSString *)searchTerm {
+//    
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//    
 //    parameters[@"query"] = searchTerm;
-    
-    parameters[@"sensor"] = @"false";
-    
-    parameters[@"key"] = REGooglePlaceAPIKey;
-    
-    [self GET:@"https://maps.googleapis.com/maps/api/place/radarsearch/json?" parameters:parameters
-      success:^(NSURLSessionDataTask *task, id responseObject) {
-          
-          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundRadarSearchPlaces:)]) {
-              
-              NSArray *results = [responseObject objectForKey:@"results"];
-              
-              NSValueTransformer *transformer;
-              
-              transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
-              
-              NSArray *places = [transformer transformedValue:results];
-              
-              [self.delegate REGooglePlacesClient:self
-                         didFoundRadarSearchPlaces: places];
-          }
-          
-      } failure:^(NSURLSessionDataTask *task, NSError *error) {
-          
-          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
-              [self.delegate REGooglePlacesClient:self
-                                 didFailWithError:error];
-          }
-      }];
-
-}
+//    
+//    parameters[@"sensor"] = @"false";
+//    
+//    parameters[@"key"] = REGooglePlaceAPIKey;
+//    
+//    [self GET:@"https://maps.googleapis.com/maps/api/place/textsearch/json?" parameters:parameters
+//      success:^(NSURLSessionDataTask *task, id responseObject) {
+//          
+//          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundTextSearchPlaces:)]) {
+//              
+//              NSArray *results = [responseObject objectForKey:@"results"];
+//              
+//              NSValueTransformer *transformer;
+//              
+//              transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
+//              
+//              NSArray *places = [transformer transformedValue:results];
+//              
+//              [self.delegate REGooglePlacesClient:self
+//                             didFoundTextSearchPlaces: places];
+//          }
+//          
+//      } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//          
+//          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
+//              [self.delegate REGooglePlacesClient:self
+//                                 didFailWithError:error];
+//          }
+//      }];
+//}
+//
+//- (void)REGooglePlaceRadarSearchByTerm:(NSString *)searchTerm {
+//    
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//    
+//    parameters[@"location"] = @"17.989167,-92.928056";
+//    
+//    parameters[@"radius"] = @(5000);
+//    
+//    parameters[@"types"] = @"food";
+//
+////    parameters[@"query"] = searchTerm;
+//    
+//    parameters[@"sensor"] = @"false";
+//    
+//    parameters[@"key"] = REGooglePlaceAPIKey;
+//    
+//    [self GET:@"https://maps.googleapis.com/maps/api/place/radarsearch/json?" parameters:parameters
+//      success:^(NSURLSessionDataTask *task, id responseObject) {
+//          
+//          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundRadarSearchPlaces:)]) {
+//              
+//              NSArray *results = [responseObject objectForKey:@"results"];
+//              
+//              NSValueTransformer *transformer;
+//              
+//              transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
+//              
+//              NSArray *places = [transformer transformedValue:results];
+//              
+//              [self.delegate REGooglePlacesClient:self
+//                         didFoundRadarSearchPlaces: places];
+//          }
+//          
+//      } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//          
+//          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
+//              [self.delegate REGooglePlacesClient:self
+//                                 didFailWithError:error];
+//          }
+//      }];
+//
+//}
 
 
 @end

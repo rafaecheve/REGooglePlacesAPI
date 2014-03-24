@@ -46,6 +46,9 @@ extern NSString * const REGooglePlaceRadarSearch;
 //output indicates output in JavaScript Object Notation (JSON) xml indicates output as XML
 @property (copy, nonatomic, readwrite)NSString * placeSearchOutput;
 
+//query — The text string on which to search, for example: "restaurant".
+@property (copy, nonatomic, readwrite)NSString * placeSearchQuery;
+
 //location — The latitude/longitude around which to retrieve Place information. This must be specified as latitude,longitude.
 @property (copy, nonatomic, readwrite)NSString * placeSearchLocation;
 

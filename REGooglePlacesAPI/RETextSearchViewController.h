@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "REGooglePlacesClient.h"
 
-@interface RETextSearchViewController : UIViewController
+@interface RETextSearchViewController : UIViewController <REGooglePlacesClientDelegate, UITableViewDelegate, UITableViewDataSource>
+
 
 @end

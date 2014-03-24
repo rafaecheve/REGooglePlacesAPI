@@ -22,6 +22,66 @@
 
 @implementation RESearchNearByViewController
 
+- (void)viewDidLoad {
+    
+    REGooglePlaceSearch *searchNearyBy = [[REGooglePlaceSearch alloc]init];
+    
+    searchNearyBy.placeSearchRequestType = REGooglePlaceNearBySearch;
+    
+    searchNearyBy.placeSearchOutput = @"json";
+
+    //required parameters
+    
+    //Villahermosa
+    
+    //searchNearyBy.placeSearchLocation =  @"17.989167,-92.928056";
+
+    //Sidney Australia
+    searchNearyBy.placeSearchLocation =  @"-37.813611,144.963056";
+
+    searchNearyBy.placeSearchRadius = @"2000";
+    
+    searchNearyBy.placeSearchSensor = @"false";
+
+    searchNearyBy.placeSearchTypes = @"food";
+    
+    //optional parameters
+
+    searchNearyBy.placeSearchName = @"salad";
+    
+    //using client to request
+
+    REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
+    
+    client.delegate = self;
+    
+    [client REGooglePlaceSearchRequest:searchNearyBy];
+    
+    [super viewDidLoad];
+}
+
+- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundPlaces:(NSArray *)places {
+    
+    self.placesArray = places;
+    
+    [self.placesTableView reloadData];
+}
+
+- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithMessage:(NSString *)message{
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Places"
+                                                        message:[NSString stringWithFormat:@"%@",message]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+}
+
+- (void)didReceiveMemoryWarning {
+    
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -37,7 +97,6 @@
 }
 
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-     
      
      static NSString *CellIdentifier = @"REPlaceTableViewCell";
      
@@ -74,66 +133,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)viewDidLoad {
-    
-    REGooglePlaceSearch *query = [[REGooglePlaceSearch alloc]init];
-    
-    query.placeSearchRequestType = REGooglePlaceNearBySearch;
-    
-    query.placeSearchOutput = @"json";
-    
-    query.placeSearchName = @"Lupita";
-    
-    query.placeSearchLocation =  @"17.989167,-92.928056";
-    
-    query.placeSearchSensor = @"false";
-    
-    query.placeSearchRadius = @"1000";
-    
-    REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
-    
-    client.delegate = self;
-    
-    [client REGooglePlaceSearchRequest:query];
-
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places {
-    
-    NSLog(@"%@",places);
-    
-    self.placesArray = places;
-    
-    [self.placesTableView reloadData];
-
-}
-
-- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithMessage:(NSString *)message{
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Places"
-                                                        message:[NSString stringWithFormat:@"%@",message]
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
-}
-
-//- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithError:(NSError *)error {
-//    
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Places"
-//                                                        message:[NSString stringWithFormat:@"%@",error]
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    [alertView show];
-//}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

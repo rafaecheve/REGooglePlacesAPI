@@ -22,9 +22,9 @@
 
 - (void)REGooglePlaceSearchRequest:(REGooglePlaceSearch *)search;
 
-- (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm;
-- (void)REGooglePlaceTextSearchByTerm:(NSString *)searchTerm;
-- (void)REGooglePlaceRadarSearchByTerm:(NSString *)searchTerm;
+//- (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm;
+//- (void)REGooglePlaceTextSearchByTerm:(NSString *)searchTerm;
+//- (void)REGooglePlaceRadarSearchByTerm:(NSString *)searchTerm;
 
 @end
 
@@ -32,11 +32,13 @@
 
 @optional
 
--(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places;
--(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundTextSearchPlaces:(NSArray *)places;
--(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundRadarSearchPlaces:(NSArray *)places;
+-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundPlaces:(NSArray *)places;
+-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithMessage:(NSString *)message;
+
+//-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places;
+//-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundTextSearchPlaces:(NSArray *)places;
+//-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundRadarSearchPlaces:(NSArray *)places;
 
 -(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithError:(NSError *)error;
--(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithMessage:(NSString *)message;
 
 @end
