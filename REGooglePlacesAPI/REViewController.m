@@ -14,47 +14,10 @@
 
 - (void)viewDidLoad {
     
-
 //    NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:query];
-//    
-//    NSLog(@"%@",d);
-    
-
-
-//    REGooglePlacesClient *client = [REGooglePlacesClient sharedGooglePlacesClient];
-//    
-//    client.delegate = self;
-//    
-//    [client REGooglePlaceNearBySearchByTerm:@"restaurant"];
-//    
-//    [client REGooglePlaceTextSearchByTerm:@"restaurants in Mexico"];
-//
-//    [client REGooglePlaceRadarSearchByTerm:@"restaurants in Mexico"];
 
     [super viewDidLoad];
 }
-
-//- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places {
-//    
-//    NSLog(@"%@",places);
-//}
-//
-//-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundTextSearchPlaces:(NSArray *)places {
-//    NSLog(@"%@",places);
-//}
-//
-//-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundRadarSearchPlaces:(NSArray *)places {
-//    NSLog(@"%@",places);
-//}
-//
-//- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithError:(NSError *)error {
-//    
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Places"
-//                                                        message:[NSString stringWithFormat:@"%@",error]
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    [alertView show];
-//}
 
 - (void)didReceiveMemoryWarning
 {
