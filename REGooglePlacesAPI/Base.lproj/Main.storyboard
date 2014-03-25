@@ -134,6 +134,7 @@
                     <navigationItem key="navigationItem" title="Text Search Requests" id="yfj-N7-ISc"/>
                     <connections>
                         <outlet property="placesTableView" destination="AF6-n3-CYw" id="aFM-V6-AjO"/>
+                        <segue destination="H50-O6-Ta7" kind="modal" id="O1o-N2-QlT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oi-sW-762" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,6 +202,7 @@
                     <navigationItem key="navigationItem" title="Nearby Search Requests" id="fjq-O6-0rE"/>
                     <connections>
                         <outlet property="placesTableView" destination="ti8-QZ-ouw" id="9qa-PE-jCt"/>
+                        <segue destination="H50-O6-Ta7" kind="modal" id="Mn3-8t-g2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaI-T4-a7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,11 +270,41 @@
                     <navigationItem key="navigationItem" title="Radar Search Requests" id="a4w-5c-reO"/>
                     <connections>
                         <outlet property="placesTableView" destination="ShQ-vu-0Im" id="DQb-3p-GPV"/>
+                        <segue destination="H50-O6-Ta7" kind="modal" id="upT-Yw-8Qt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGc-fU-4ek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="-147"/>
+            <point key="canvasLocation" x="1318" y="207"/>
+        </scene>
+        <!--Place Detail View Controller-->
+        <scene sceneID="87V-rU-mSs">
+            <objects>
+                <viewController storyboardIdentifier="REPlaceDetailViewController" id="H50-O6-Ta7" customClass="REPlaceDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="guu-1D-VO2"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Uy-sv-00J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CVS-kd-ggs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c1-z2-ggR">
+                                <rect key="frame" x="139" y="273" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblPlacename" destination="9c1-z2-ggR" id="EOU-0l-Niw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bhz-KQ-rbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685" y="-509"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -280,4 +312,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="O1o-N2-QlT"/>
+    </inferredMetricsTieBreakers>
 </document>

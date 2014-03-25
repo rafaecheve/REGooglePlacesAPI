@@ -7,6 +7,8 @@
 //
 
 #import "RESearchNearByViewController.h"
+#import "REPlaceDetailViewController.h"
+
 #import "REGooglePlaceSearch.h"
 #import "REGooglePlace.h"
 #import "REPlaceTableViewCell.h"
@@ -126,6 +128,21 @@
      
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    REGooglePlace * place = [self.placesArray objectAtIndex:indexPath.row];
+
+    
+    REPlaceDetailViewController * detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"REPlaceDetailViewController"];
+    
+    detailViewController.placeDetail = place;
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
+    
+
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -134,5 +151,6 @@
     }
     return self;
 }
+
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530FB7C118E1011B00461B40 /* REPlaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530FB7C018E1011B00461B40 /* REPlaceDetailViewController.m */; };
 		5333E93018DF7AC000F9BCD0 /* RESearchNearByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */; };
 		5333E93418DF7C9200F9BCD0 /* RETextSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */; };
 		5333E93718DF7CA300F9BCD0 /* RERadarSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93618DF7CA300F9BCD0 /* RERadarSearchViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		530FB7BF18E1011B00461B40 /* REPlaceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPlaceDetailViewController.h; sourceTree = "<group>"; };
+		530FB7C018E1011B00461B40 /* REPlaceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPlaceDetailViewController.m; sourceTree = "<group>"; };
 		5333E92E18DF7AC000F9BCD0 /* RESearchNearByViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESearchNearByViewController.h; sourceTree = "<group>"; };
 		5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESearchNearByViewController.m; sourceTree = "<group>"; };
 		5333E93218DF7C9200F9BCD0 /* RETextSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETextSearchViewController.h; sourceTree = "<group>"; };
@@ -113,7 +116,8 @@
 		5333E93118DF7AC900F9BCD0 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				53DF2EE818DE556300F8879B /* Main.storyboard */,
+				530FB7BF18E1011B00461B40 /* REPlaceDetailViewController.h */,
+				530FB7C018E1011B00461B40 /* REPlaceDetailViewController.m */,
 				5333E93B18DF83CD00F9BCD0 /* REPlaceTableViewCell.h */,
 				5333E93C18DF83CD00F9BCD0 /* REPlaceTableViewCell.m */,
 				53DF2EEB18DE556300F8879B /* REViewController.h */,
@@ -132,6 +136,7 @@
 		53DF2ECA18DE556300F8879B = {
 			isa = PBXGroup;
 			children = (
+				53DF2EE818DE556300F8879B /* Main.storyboard */,
 				53DF2EE518DE556300F8879B /* REAppDelegate.h */,
 				53DF2EE618DE556300F8879B /* REAppDelegate.m */,
 				5333E93118DF7AC900F9BCD0 /* Demo */,
@@ -348,6 +353,7 @@
 				53DF2F0D18DE605100F8879B /* REGooglePlacesClient.m in Sources */,
 				53DF2EE318DE556300F8879B /* main.m in Sources */,
 				53DF2F1018DE6C7200F8879B /* REGooglePlace.m in Sources */,
+				530FB7C118E1011B00461B40 /* REPlaceDetailViewController.m in Sources */,
 				5333E93018DF7AC000F9BCD0 /* RESearchNearByViewController.m in Sources */,
 				53DF2F1318DF4DC900F8879B /* REGooglePlaceSearch.m in Sources */,
 				53DF2EE718DE556300F8879B /* REAppDelegate.m in Sources */,
@@ -389,6 +395,7 @@
 				53DF2EE918DE556300F8879B /* Base */,
 			);
 			name = Main.storyboard;
+			path = REGooglePlacesAPI;
 			sourceTree = "<group>";
 		};
 		53DF2EFE18DE556400F8879B /* InfoPlist.strings */ = {
