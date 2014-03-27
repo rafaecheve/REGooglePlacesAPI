@@ -118,7 +118,6 @@
                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return cell;
-    
 }
 
 /*
