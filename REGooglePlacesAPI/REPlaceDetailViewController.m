@@ -27,8 +27,8 @@
 
 - (void)viewDidLoad {
     
-    NSLog(@"%@",self.placeDetail.placeName);
-    
+    self.lblPlacename.text = self.placeDetail.placeName;
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

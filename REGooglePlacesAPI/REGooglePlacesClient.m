@@ -11,8 +11,8 @@
 
 static NSString * const REGooglePlaceAPIBaseURL = @"https://maps.googleapis.com/maps/api/place";
 
-#error "Obtain an API Key from Google Developer Console"
-static NSString * const REGooglePlaceAPIKey     = @"";
+//#error "Obtain an API Key from Google Developer Console"
+static NSString * const REGooglePlaceAPIKey     = @"AIzaSyBnZA7KGHAKm9J39HEl-mVk3i0DjByK6QM";
 
 @implementation REGooglePlacesClient
 
@@ -85,7 +85,7 @@ static NSString * const REGooglePlaceAPIKey     = @"";
       }];
 }
 
-- (void)REGooglePlaceDetail:(REGooglePlace *)place witSearchRequest:(REGooglePlaceSearch *)search {
+- (void)REGooglePlaceDetail:(REGooglePlace *)place withSearchRequest:(REGooglePlaceSearch *)search {
     
     NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:search];
     
@@ -106,7 +106,7 @@ static NSString * const REGooglePlaceAPIKey     = @"";
                   
               }else{
                   
-                  NSArray *results = [responseObject objectForKey:@"results"];
+                  NSArray *results = [responseObject objectForKey:@"result"];
                   
                   NSValueTransformer *transformer;
                   

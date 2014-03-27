@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		530FB7C118E1011B00461B40 /* REPlaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530FB7C018E1011B00461B40 /* REPlaceDetailViewController.m */; };
+		530FB7C718E105E500461B40 /* powered-by-google-on-non-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 530FB7C318E105E500461B40 /* powered-by-google-on-non-white.png */; };
+		530FB7C818E105E500461B40 /* powered-by-google-on-non-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 530FB7C418E105E500461B40 /* powered-by-google-on-non-white@2x.png */; };
+		530FB7C918E105E500461B40 /* powered-by-google-on-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 530FB7C518E105E500461B40 /* powered-by-google-on-white.png */; };
+		530FB7CA18E105E500461B40 /* powered-by-google-on-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 530FB7C618E105E500461B40 /* powered-by-google-on-white@2x.png */; };
 		5333E93018DF7AC000F9BCD0 /* RESearchNearByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */; };
 		5333E93418DF7C9200F9BCD0 /* RETextSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93318DF7C9200F9BCD0 /* RETextSearchViewController.m */; };
 		5333E93718DF7CA300F9BCD0 /* RERadarSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5333E93618DF7CA300F9BCD0 /* RERadarSearchViewController.m */; };
@@ -47,6 +51,10 @@
 /* Begin PBXFileReference section */
 		530FB7BF18E1011B00461B40 /* REPlaceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPlaceDetailViewController.h; sourceTree = "<group>"; };
 		530FB7C018E1011B00461B40 /* REPlaceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPlaceDetailViewController.m; sourceTree = "<group>"; };
+		530FB7C318E105E500461B40 /* powered-by-google-on-non-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-non-white.png"; sourceTree = "<group>"; };
+		530FB7C418E105E500461B40 /* powered-by-google-on-non-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-non-white@2x.png"; sourceTree = "<group>"; };
+		530FB7C518E105E500461B40 /* powered-by-google-on-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-white.png"; sourceTree = "<group>"; };
+		530FB7C618E105E500461B40 /* powered-by-google-on-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-white@2x.png"; sourceTree = "<group>"; };
 		5333E92E18DF7AC000F9BCD0 /* RESearchNearByViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESearchNearByViewController.h; sourceTree = "<group>"; };
 		5333E92F18DF7AC000F9BCD0 /* RESearchNearByViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESearchNearByViewController.m; sourceTree = "<group>"; };
 		5333E93218DF7C9200F9BCD0 /* RETextSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETextSearchViewController.h; sourceTree = "<group>"; };
@@ -113,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		530FB7C218E105CF00461B40 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				530FB7C318E105E500461B40 /* powered-by-google-on-non-white.png */,
+				530FB7C418E105E500461B40 /* powered-by-google-on-non-white@2x.png */,
+				530FB7C518E105E500461B40 /* powered-by-google-on-white.png */,
+				530FB7C618E105E500461B40 /* powered-by-google-on-white@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		5333E93118DF7AC900F9BCD0 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +155,7 @@
 		53DF2ECA18DE556300F8879B = {
 			isa = PBXGroup;
 			children = (
+				530FB7C218E105CF00461B40 /* Assets */,
 				53DF2EE818DE556300F8879B /* Main.storyboard */,
 				53DF2EE518DE556300F8879B /* REAppDelegate.h */,
 				53DF2EE618DE556300F8879B /* REAppDelegate.m */,
@@ -294,9 +314,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530FB7CA18E105E500461B40 /* powered-by-google-on-white@2x.png in Resources */,
+				530FB7C818E105E500461B40 /* powered-by-google-on-non-white@2x.png in Resources */,
 				53DF2EEF18DE556400F8879B /* Images.xcassets in Resources */,
+				530FB7C718E105E500461B40 /* powered-by-google-on-non-white.png in Resources */,
 				53DF2EE118DE556300F8879B /* InfoPlist.strings in Resources */,
 				53DF2EEA18DE556300F8879B /* Main.storyboard in Resources */,
+				530FB7C918E105E500461B40 /* powered-by-google-on-white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

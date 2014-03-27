@@ -13,6 +13,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 
 #import "REGooglePlaceSearch.h"
+#import "REGooglePlace.h"
 
 @interface REGooglePlacesClient : AFHTTPSessionManager
 
@@ -21,7 +22,7 @@
 @property (nonatomic, weak) id<REGooglePlacesClientDelegate>delegate;
 
 - (void)REGooglePlaceSearchRequest:(REGooglePlaceSearch *)search;
-
+- (void)REGooglePlaceDetail:(REGooglePlace *)place withSearchRequest:(REGooglePlaceSearch *)search;
 //- (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm;
 //- (void)REGooglePlaceTextSearchByTerm:(NSString *)searchTerm;
 //- (void)REGooglePlaceRadarSearchByTerm:(NSString *)searchTerm;
@@ -33,6 +34,8 @@
 @optional
 
 -(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundPlaces:(NSArray *)places;
+-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundPlace:(REGooglePlace *)place;
+
 -(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFailWithMessage:(NSString *)message;
 
 //-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundNearByPlaces:(NSArray *)places;
