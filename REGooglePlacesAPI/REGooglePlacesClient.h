@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 rafaecheve. All rights reserved.
 //
 
+static NSString * const REGooglePlaceAPIBaseURL = @"https://maps.googleapis.com/maps/api/place";
+
 @protocol REGooglePlacesClientDelegate;
 
 
