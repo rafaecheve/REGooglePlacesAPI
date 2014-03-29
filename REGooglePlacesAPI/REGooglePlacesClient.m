@@ -11,7 +11,7 @@
 
 
 //#error "Obtain an API Key from Google Developer Console"
-static NSString * const REGooglePlaceAPIKey     = @"AIzaSyBnZA7KGHAKm9J39HEl-mVk3i0DjByK6QM";
+static NSString * const REGooglePlaceAPIKey     = @"";
 
 @implementation REGooglePlacesClient
 
