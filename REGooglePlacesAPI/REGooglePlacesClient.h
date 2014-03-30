@@ -54,9 +54,6 @@ static NSString * const REGooglePlaceAPIBaseURL = @"https://maps.googleapis.com/
 - (void)REGooglePlaceSearchRequest:(REGooglePlaceSearch *)search;
 
 - (void)REGooglePlaceDetail:(REGooglePlace *)place withSearchRequest:(REGooglePlaceSearch *)search;
-//- (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm;
-//- (void)REGooglePlaceTextSearchByTerm:(NSString *)searchTerm;
-//- (void)REGooglePlaceRadarSearchByTerm:(NSString *)searchTerm;
 
 @end
 
