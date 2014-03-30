@@ -11,6 +11,7 @@
 
 
 //#error "Obtain an API Key from Google Developer Console"
+
 static NSString * const REGooglePlaceAPIKey     = @"";
 
 @implementation REGooglePlacesClient
@@ -46,10 +47,14 @@ static NSString * const REGooglePlaceAPIKey     = @"";
     
     NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:search];
     
+//    search.placeSearchType = 1;
+    
     NSString * urlRequest = [NSString stringWithFormat:@"%@/%@/%@?key=%@",REGooglePlaceAPIBaseURL,
                                                                           search.placeSearchRequestType,
                                                                           search.placeSearchOutput,
                                                                           REGooglePlaceAPIKey];
+    
+
     [self GET:urlRequest parameters:d
       success:^(NSURLSessionDataTask *task, id responseObject) {
           

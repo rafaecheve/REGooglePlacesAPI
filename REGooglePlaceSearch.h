@@ -38,7 +38,19 @@ extern NSString * const REGooglePlaceNearBySearch;
 extern NSString * const REGooglePlaceTextSearch;
 extern NSString * const REGooglePlaceRadarSearch;
 
+
 @interface REGooglePlaceSearch : MTLModel <MTLJSONSerializing>
+
+typedef NS_ENUM(NSUInteger, FBTweakTableViewCellMode) {
+    FBTweakTableViewCellModeNone = 0,
+    FBTweakTableViewCellModeBoolean,
+    FBTweakTableViewCellModeInteger
+};
+
+
+//options nearbysearch, textsearch, radarsearch
+
+@property (nonatomic, readwrite)FBTweakTableViewCellMode placeSearchType;
 
 //options nearbysearch, textsearch, radarsearch
 @property (copy, nonatomic, readwrite)NSString  * placeSearchRequestType;
