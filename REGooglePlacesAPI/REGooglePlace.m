@@ -36,5 +36,4 @@
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:REGooglePlace.class];
 }
 
-
 @end
