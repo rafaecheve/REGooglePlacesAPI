@@ -9,7 +9,6 @@
 #import "REGooglePlacesClient.h"
 #import "REGooglePlace.h"
 
-
 //#error "Obtain an API Key from Google Developer Console"
 
 static NSString * const REGooglePlaceAPIKey     = @"";
