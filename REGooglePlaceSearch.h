@@ -41,17 +41,6 @@ extern NSString * const REGooglePlaceRadarSearch;
 
 @interface REGooglePlaceSearch : MTLModel <MTLJSONSerializing>
 
-typedef NS_ENUM(NSUInteger, FBTweakTableViewCellMode) {
-    FBTweakTableViewCellModeNone = 0,
-    FBTweakTableViewCellModeBoolean,
-    FBTweakTableViewCellModeInteger
-};
-
-
-//options nearbysearch, textsearch, radarsearch
-
-@property (nonatomic, readwrite)FBTweakTableViewCellMode placeSearchType;
-
 //options nearbysearch, textsearch, radarsearch
 @property (copy, nonatomic, readwrite)NSString  * placeSearchRequestType;
 
@@ -105,6 +94,5 @@ typedef NS_ENUM(NSUInteger, FBTweakTableViewCellMode) {
 
 //zagatselected — The zagatselected parameter is experimental, and is only available to Places API enterprise customers.
 @property (copy, nonatomic, readwrite)NSString * placeSearchZagatSelected;
-
 
 @end
