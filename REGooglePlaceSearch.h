@@ -95,4 +95,5 @@ extern NSString * const REGooglePlaceRadarSearch;
 //zagatselected — The zagatselected parameter is experimental, and is only available to Places API enterprise customers.
 @property (copy, nonatomic, readwrite)NSString * placeSearchZagatSelected;
 
+
 @end
