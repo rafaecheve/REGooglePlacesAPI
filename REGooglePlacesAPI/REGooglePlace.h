@@ -50,19 +50,49 @@
 @property (copy, nonatomic, readonly)NSString * placeVicinity;
 
 // additional parameters on details
+
+/* placePriceLevel on the place
+ */
 @property (copy, nonatomic, readonly)NSString * placePriceLevel;
 
+/* placeFormattedPhone if place has one
+ */
 @property (copy, nonatomic, readonly)NSString * placeFormattedPhone;
+
+/* placeInternationalPhone if place has one
+ */
 @property (copy, nonatomic, readonly)NSString * placeInternationalPhone;
+
+/* placeOpeningHours are the opening hours added by users
+ */
 @property (copy, nonatomic, readonly)NSString * placeOpeningHours;
 
+/* placeUrl if the place has one url
+ */
 @property (copy, nonatomic, readonly)NSString * placeUrl;
+
+/* placeWebsite if the place has one website
+ */
 @property (copy, nonatomic, readonly)NSString * placeWebsite;
 
+/* placeTypes attribute by this place
+ */
 @property (copy, nonatomic, readonly)NSArray * placeTypes;
+
+/* photos taken by users in the place
+ */
 @property (copy, nonatomic, readonly)NSArray * placePhotos;
+
+/* events made by users in the place
+ */
 @property (copy, nonatomic, readonly)NSArray * placeEvents;
+
+/* placeReviews made by users in the place
+ */
 @property (copy, nonatomic, readonly)NSArray * placeReviews;
+
+/* placeAddressComponents in a place
+ */
 @property (copy, nonatomic, readonly)NSArray * placeAddressComponents;
 
 @end
