@@ -62,6 +62,10 @@ static NSString * const REGooglePlaceAPIBaseURL = @"https://maps.googleapis.com/
 
 @optional
 
+/* Returns an autocomplete of places based on the client request suggestion
+ */
+-(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundAutocomplete:(NSArray *)places;
+
 /* Returns an array of places based on the client request
 */
 -(void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundPlaces:(NSArray *)places;

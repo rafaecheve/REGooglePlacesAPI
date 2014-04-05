@@ -131,6 +131,49 @@ static NSString * const REGooglePlaceAPIKey     = @"";
       }];
 }
 
+- (void)REGooglePlacesClient:(REGooglePlacesClient *)client didFoundAutocomplete:(NSArray *)places {
+
+//    NSDictionary *d = [MTLJSONAdapter JSONDictionaryFromModel:search];
+//    
+//    NSString * urlRequest = [NSString stringWithFormat:@"%@/%@/%@?key=%@",REGooglePlaceAPIBaseURL,
+//                             search.placeSearchRequestType,
+//                             search.placeSearchOutput,
+//                             REGooglePlaceAPIKey];
+//    
+//    [self GET:urlRequest parameters:d
+//      success:^(NSURLSessionDataTask *task, id responseObject) {
+//          
+//          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFoundPlaces:)]) {
+//              
+//              if (![[responseObject objectForKey:@"status"] isEqualToString:@"OK"]) {
+//                  
+//                  [self.delegate REGooglePlacesClient:self
+//                                   didFailWithMessage:[responseObject objectForKey:@"error_message"]];
+//                  
+//              }else{
+//                  
+//                  NSArray *results = [responseObject objectForKey:@"result"];
+//                  
+//                  NSValueTransformer *transformer;
+//                  
+//                  transformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:REGooglePlace.class];
+//                  
+//                  NSArray *places = [transformer transformedValue:results];
+//                  
+//                  [self.delegate REGooglePlacesClient:self
+//                                       didFoundPlaces: places];
+//              }
+//          }
+//          
+//      } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//          
+//          if ([self.delegate respondsToSelector:@selector(REGooglePlacesClient:didFailWithError:)]) {
+//              [self.delegate REGooglePlacesClient:self
+//                                 didFailWithError:error];
+//          }
+//      }];
+}
+
 //- (void)REGooglePlaceNearBySearchByTerm:(NSString *)searchTerm {
 //
 //    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];

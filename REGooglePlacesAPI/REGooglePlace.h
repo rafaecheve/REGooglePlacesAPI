@@ -45,8 +45,16 @@
 @property (copy, nonatomic, readonly)NSString * placeId;
 @property (copy, nonatomic, readonly)NSString * placeName;
 
+/* placeRating given by users at this place
+ */
 @property (copy, nonatomic, readonly)NSString * placeRating;
+
+/* placeReference a unique identifier of this place
+ */
 @property (copy, nonatomic, readonly)NSString * placeReference;
+
+/* placeVicinity represent the area of this place
+ */
 @property (copy, nonatomic, readonly)NSString * placeVicinity;
 
 // additional parameters on details
